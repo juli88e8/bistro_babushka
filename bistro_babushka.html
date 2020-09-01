@@ -38,12 +38,54 @@
     .valgt {
         color: red;
     }
+
+    #popop {
+        position: fixed;
+        display: none;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .8);
+    }
+
+    #popop article {
+        width: 60vw;
+        height: 60vh;
+        margin: 4rem;
+        background-color: white;
+    }
+
+    #luk {
+        position: fixed;
+        top: 5rem;
+        right: 1rem;
+        left: 67rem;
+        background-color: white;
+        color: black;
+        border-radius: 5px;
+        padding: .1em;
+        cursor: pointer;
+    }
 </style>
 
 
 
 
 <body>
+    <section id="popop">
+        <article>
+            <button id="luk">X</button>
+            <h2></h2>
+            <img src="" alt="">
+            <p>Oprindelse: <span class="oprindelse"></span></p>
+            <p class="lang"> </p>
+        </article>
+    </section>
+
+
     <h1>Alle</h1>
     <header>
         <button class="filter valgt" data-kategori="alle">Alle</button>
@@ -52,6 +94,7 @@
         <button class="filter" data-kategori="desserter">Desserter</button>
         <button class="filter" data-kategori="drikkevarer">Drikkevarer</button>
     </header>
+
 
 
     <section id="container"></section>
@@ -74,6 +117,7 @@
         let retter;
         const link = "https://spreadsheets.google.com/feeds/list/17Dd7DvkPaFamNUdUKlrFgnH6POvBJXac7qyiS6zNRw0/od6/public/values?alt=json"
         document.addEventListener("DOMContentLoaded", hentData);
+        const popop = document.querySelector("#popop");
 
         async function hentData() {
             const respons = await fetch(link);
@@ -97,10 +141,24 @@
                     klon.querySelector(".navn").textContent = ret.gsx$navn.$t;
                     klon.querySelector(".kort").textContent = ret.gsx$kort.$t;
                     klon.querySelector(".pris").textContent = ret.gsx$pris.$t;
+                    klon.querySelector("article").addEventListener("click", () => visDetaljer(ret));
+
                     container.appendChild(klon);
+
                 }
             })
         }
+
+        function visDetaljer(ret) {
+            popop.style.display = "block";
+            popop.querySelector("h2").textContent = ret.gsx$navn.$t;
+            popop.querySelector("img").src = "imgs/small/" + ret.gsx$billede.$t + "-sm.jpg";
+            popop.querySelector(".oprindelse").textContent = person.gsx$oprindelse.$t;
+            popop.querySelector(".lang").textContent = person.gsx$lang.$t;
+        }
+
+        document.querySelector("#luk").addEventListener("click", () => popop.style.display = "none");
+
 
         function addEventListenersToButtons() {
             document.querySelectorAll(".filter").forEach((btn) => {
