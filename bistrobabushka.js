@@ -3,6 +3,7 @@
   const link = "https://spreadsheets.google.com/feeds/list/17Dd7DvkPaFamNUdUKlrFgnH6POvBJXac7qyiS6zNRw0/od6/public/values?alt=json"
   document.addEventListener("DOMContentLoaded", hentData);
   const popop = document.querySelector("#popop");
+  let myTimer;
 
   async function hentData() {
       const respons = await fetch(link);
@@ -11,6 +12,7 @@
       document.querySelector("#menuknap").addEventListener("click", toggleMenu);
       document.querySelector("#menukortknap").addEventListener("click", toggleMenukort);
       visRetter();
+      sidenOesteuropa();
   }
 
   function visRetter() {
@@ -33,6 +35,11 @@
           }
       })
   }
+
+
+
+
+
 
   function visDetaljer(ret) {
       popop.style.display = "block";
@@ -90,6 +97,74 @@
 
       }
   }
+
+  /******* Splash billeder start *******/
+  function sidenOesteuropa() {
+      console.log("sidenOesteuropa");
+
+      clearTimeout(myTimer);
+
+      document.querySelector("#content_sulten .pile .venstre").removeEventListener("click", sidenOesteuropa);
+
+      document.querySelector("#content_kontaktinfo .pile .hojre").removeEventListener("click", sidenOesteuropa);
+
+      document.querySelector("#oesteuropa").classList.remove("hidden");
+
+      document.querySelector("#sulten").classList.add("hidden");
+
+      document.querySelector("#kontaktinfo").classList.add("hidden");
+
+      document.querySelector("#content_oesteuropa .pile .venstre").addEventListener("click", sidenKontaktinfo);
+
+      document.querySelector("#content_oesteuropa .pile .hojre").addEventListener("click", sidenSulten);
+
+      myTimer = setTimeout(sidenSulten, 4000);
+  }
+
+  function sidenSulten() {
+      console.log("sidenSulten");
+
+      clearTimeout(myTimer);
+
+      document.querySelector("#content_kontaktinfo .pile .venstre").removeEventListener("click", sidenSulten);
+
+      document.querySelector("#content_oesteuropa .pile .hojre").removeEventListener("click", sidenSulten);
+
+
+      document.querySelector("#oesteuropa").classList.add("hidden");
+
+      document.querySelector("#sulten").classList.remove("hidden");
+
+      document.querySelector("#content_sulten .pile .venstre").addEventListener("click", sidenOesteuropa);
+
+      document.querySelector("#content_sulten .pile .hojre").addEventListener("click", sidenKontaktinfo);
+
+      myTimer = setTimeout(sidenKontaktinfo, 4000);
+  }
+
+  function sidenKontaktinfo() {
+      console.log("sidenKontaktinfo");
+
+      clearTimeout(myTimer);
+
+      document.querySelector("#content_oesteuropa .pile .venstre").removeEventListener("click", sidenKontaktinfo);
+
+      document.querySelector("#content_sulten .pile .hojre").removeEventListener("click", sidenKontaktinfo);
+
+      document.querySelector("#oesteuropa").classList.add("hidden");
+      document.querySelector("#sulten").classList.add("hidden");
+
+      document.querySelector("#kontaktinfo").classList.remove("hidden");
+
+      document.querySelector("#content_kontaktinfo .pile .venstre").addEventListener("click", sidenSulten);
+
+      document.querySelector("#content_kontaktinfo .pile .hojre").addEventListener("click", sidenOesteuropa);
+
+      myTimer = setTimeout(sidenOesteuropa, 4000);
+  }
+
+
+
 
 
 
