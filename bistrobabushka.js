@@ -9,6 +9,7 @@
       retter = await respons.json();
       addEventListenersToButtons();
       document.querySelector("#menuknap").addEventListener("click", toggleMenu);
+      document.querySelector("#menukortknap").addEventListener("click", toggleMenukort);
       visRetter();
   }
 
@@ -75,7 +76,24 @@
       } else {
           document.querySelector("#menuknap").textContent = "x";
       }
-
   }
+
+  function toggleMenukort() {
+      console.log("toggleMenukort");
+
+      document.querySelector("#madmenukort").classList.toggle("hidden");
+
+      let erSkjult = document.querySelector("#madmenukort").classList.contains("hidden");
+
+      if (erSkjult == true) {
+          document.querySelector("#menuknap").textContent = "Sorter efter";
+
+      }
+  }
+
+
+
+
+
 
   hentData();
