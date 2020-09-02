@@ -26,6 +26,7 @@ button {
     color: red;
 }
 
+/*******SINGLEVIEW POPOP START*********/
 #popop {
     position: fixed;
     display: none;
@@ -57,6 +58,9 @@ button {
     cursor: pointer;
 }
 
+/*******SINGLEVIEW POPOP SLUT*********/
+
+/*******MENU HEADER NAVIGATION START*********/
 .hidden {
     display: none;
 }
@@ -100,4 +104,47 @@ button {
     }
 }
 
-/******MENU SLUT*******/
+/*******MENU HEADER NAVIGATION SLUT*********/
+
+/*******MENUKORT NAVIGATION START*********/
+menukort menukortknap {
+    display: inline-block;
+    font-family: questa-sans, sans-serif;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+#madmenukort {
+    list-style-type: none;
+    z-index: +1;
+}
+
+/****Menukort Web*****/
+@media (min-width:600px) {
+
+    #menukortknap {
+        display: none;
+    }
+
+    #madmenukort.hidden {
+        display: initial;
+    }
+
+    #madmenukort li {
+        display: inline-block;
+        padding-bottom: 10px;
+        padding-top: 5px;
+    }
+
+    /*******MENUKORT NAVIGATION SLUT*********/
+
+
+    /*******FOOTER START*********/
+    footer {
+        display: block;
+    }
+
+    #kontakt {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(550px, 1fr));
+    }
