@@ -8,6 +8,7 @@
       const respons = await fetch(link);
       retter = await respons.json();
       addEventListenersToButtons();
+      document.querySelector("#menuknap").addEventListener("click", toggleMenu);
       visRetter();
   }
 
@@ -59,6 +60,22 @@
 
       this.classList.add("valgt");
       visRetter();
+  }
+
+  function toggleMenu() {
+      console.log("toggleMenu");
+
+      document.querySelector("#menu").classList.toggle("hidden");
+
+      let erSkjult = document.querySelector("#menu").classList.contains("hidden");
+
+      if (erSkjult == true) {
+          document.querySelector("#menuknap").textContent = "☰";
+
+      } else {
+          document.querySelector("#menuknap").textContent = "x";
+      }
+
   }
 
   hentData();
