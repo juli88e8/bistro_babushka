@@ -7,11 +7,9 @@
     <meta name="robots" content="noindex">
     <title>Bistro Babushka</title>
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
-
     <section id="popop">
         <article>
             <button id="luk">X</button>
@@ -21,8 +19,6 @@
             <p class="lang"> </p>
         </article>
     </section>
-
-
     <header>
         <nav>
             <div id="menuknap">☰</div>
@@ -35,125 +31,61 @@
     </header>
 
 
-
-
-
     <nav id="menukort">
         <div id="menukortknap">Sorter efter</div>
         <ul id="madmenukort" class="hidden">
-
             <li><button class="filter valgt" data-kategori="alle">Alle</button></li>
             <li><button class="filter" data-kategori="forretter">Forretter</button></li>
             <li> <button class="filter" data-kategori="hovedretter">Hovedretter</button></li>
             <li><button class="filter" data-kategori="desserter">Desserter</button></li>
             <li> <button class="filter" data-kategori="drikkevarer">Drikkevarer</button></li>
         </ul>
-    </nav>
 
 
-    <main id="velkommen">
 
-        <section id="oesteuropa">
-            <div class="sectionwrapper_oesteuropa">
-                <div id="content_oesteuropa">
-                    <div class="pile">
-                        <div class="venstre">←</div>
-                        <div class="hojre">→</div>
-                    </div>
-                    <div id="text_oesteuropa">
-                        <h3>Velkommen</h3>
-                        <p>Hos Bistro Babushka giver vi dig smagen af Østeuropa. Vi tager dig en tur gennem denne del af Europa med en lang række lækre og smagsfulde retter, som kan nydes enten i vores resturant eller derhjemme som take-away.
-                        </p>
-                    </div>
-                </div>
+
+        <h1>Alle</h1>
+
+        <section id="container"></section>
+
+
+        <template>
+            <article id="ret">
+                <img src="" alt="">
+                <h2 class="navn"></h2>
+                <p class="kort"></p>
+                <p class="pris"></p>
+            </article>
+        </template>
+
+
+
+
+        <footer id="kontakt">
+            <div class="adresse">
+                <h3>Kontakt</h3>
+                <p>
+                    Toftvej 60
+                    <br>
+                    1207 København K
+                    <br>
+                    Tlf: +45 12 34 56 78
+                </p>
             </div>
-        </section>
 
-        <section id="sulten">
-            <div class="sectionwrapper_sulten">
-                <div id="content_sulten">
-                    <div class="pile">
-                        <div class="venstre">←</div>
-                        <div class="hojre">→</div>
-                    </div>
-                    <div id="text_sulten">
-                        <p>"Sulten?
-                            <br>
-                            Ventetiden er ovre"
-                        </p><br>
-                        <a href="#menu">Se menukortet her</a>
-                    </div>
-                </div>
+            <div class="adresse">
+                <h3>Åbningstider</h3>
+                <p>
+                    Mandag - fredag: 11.00-22.00
+                    <br>
+                    Lørdag: 12.00-23.00
+                    <br>
+                    Søndag: Lukket
+                </p>
             </div>
-        </section>
+        </footer>
 
-        <section id="kontaktinfo">
-            <div class="sectionwrapper_kontaktinfo">
-                <div id="content_kontaktinfo">
-                    <div class="pile">
-                        <div class="venstre">←</div>
-                        <div class="hojre">→</div>
-                    </div>
-                    <div id="text_kontaktinfo">
-                        <p>
-                            Mange i selskabet?
-                            <br>
-                            Ring til os og bestil dit bord
-                        </p>
-                        <a href="#kontakt">Se vores kontaktinformationer her</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-
-
-    <h1>Alle</h1>
-
-
-    <section id="container"></section>
-
-
-    <template>
-        <article>
-            <img src="" alt="">
-            <h2 class="navn"></h2>
-            <p class="kort"></p>
-            <p class="pris"></p>
-        </article>
-    </template>
-
-
-
-
-
-
-    <footer id="kontakt">
-        <div class="adresse">
-            <h3>Kontakt</h3>
-            <p>
-                Toftvej 60
-                <br>
-                1207 København K
-                <br>
-                Tlf: +45 12 34 56 78
-            </p>
-        </div>
-
-        <div class="adresse">
-            <h3>Åbningstider</h3>
-            <p>
-                Mandag - fredag: 11.00-22.00
-                <br>
-                Lørdag: 12.00-23.00
-                <br>
-                Søndag: Lukket
-            </p>
-        </div>
-    </footer>
-
-    <script src="bistrobabushka.js"></script>
+        <script src="bistrobabushka.js"></script>
 
 
 
@@ -162,6 +94,4 @@
 
 
 
-</body>
-
-</html>
+</body></html>
