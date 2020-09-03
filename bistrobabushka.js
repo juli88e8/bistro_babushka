@@ -29,7 +29,7 @@
               klon.querySelector("img").src = "imgs/small/" + ret.gsx$billede.$t + "-sm.jpg";
               klon.querySelector(".navn").textContent = ret.gsx$navn.$t;
               klon.querySelector(".kort").textContent = ret.gsx$kort.$t;
-              klon.querySelector(".pris").textContent = ret.gsx$pris.$t;
+              klon.querySelector(".pris").textContent = ret.gsx$pris.$t + ` kr`;
               klon.querySelector("article").addEventListener("click", () => visDetaljer(ret));
               container.appendChild(klon);
           }
@@ -40,7 +40,6 @@
       popop.style.display = "block";
       popop.querySelector("h2").textContent = ret.gsx$navn.$t;
       popop.querySelector("img").src = "imgs/small/" + ret.gsx$billede.$t + "-sm.jpg";
-      popop.querySelector(".oprindelse").textContent = ret.gsx$oprindelse.$t;
       popop.querySelector(".lang").textContent = ret.gsx$lang.$t;
   }
 
@@ -88,7 +87,7 @@
       let erSkjult = document.querySelector("#madmenukort").classList.contains("hidden");
 
       if (erSkjult == true) {
-          document.querySelector("#menuknap").textContent = "Sorter efter";
+          document.querySelector("#menukortknap").textContent = "↓ Sorter efter";
       }
   }
 

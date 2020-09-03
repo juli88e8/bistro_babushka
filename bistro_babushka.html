@@ -10,29 +10,37 @@
 </head>
 
 <body>
+
     <section id="popop">
-        <article>
+        <article id="article">
             <button id="luk">X</button>
-            <h2></h2>
             <img src="" alt="">
-            <p>Oprindelse: <span class="oprindelse"></span></p>
-            <p class="lang"> </p>
+            <h2 class="navn"></h2>
+            <p class="lang"></p>
         </article>
     </section>
+
+
+
+
     <header>
+        <h1 class="hidden">BISTRO <br>
+            BABUSHKA</h1>
         <nav>
             <div id="menuknap">☰</div>
             <ul id="menu" class="hidden">
-                <li><a href="bistro_babushka.html#velkommen">Velkommen</a></li>
-                <li><a href="bistro_babushka.html#container">Menu</a></li>
                 <li><a href="bistro_babushka.html#kontakt">Kontakt</a></li>
+                <li><a href="bistro_babushka.html">Reservation</a></li>
+                <li><a href="bistro_babushka.html#container">Menu</a></li>
             </ul>
         </nav>
+
+
     </header>
 
 
     <nav id="menukort">
-        <div id="menukortknap">Sorter efter</div>
+        <div id="menukortknap"> ↓ Sorter efter</div>
         <ul id="madmenukort" class="hidden">
             <li><button class="filter valgt" data-kategori="alle">Alle</button></li>
             <li><button class="filter" data-kategori="forretter">Forretter</button></li>
@@ -41,57 +49,59 @@
             <li> <button class="filter" data-kategori="drikkevarer">Drikkevarer</button></li>
         </ul>
 
+    </nav>
 
 
+    <h1>Alle</h1>
 
-        <h1>Alle</h1>
-
-        <section id="container"></section>
-
-
-        <template>
-            <article id="ret">
-                <img src="" alt="">
-                <h2 class="navn"></h2>
-                <p class="kort"></p>
-                <p class="pris"></p>
-            </article>
-        </template>
+    <section id="container"></section>
 
 
-
-
-        <footer id="kontakt">
-            <div class="adresse">
-                <h3>Kontakt</h3>
-                <p>
-                    Toftvej 60
-                    <br>
-                    1207 København K
-                    <br>
-                    Tlf: +45 12 34 56 78
-                </p>
-            </div>
-
-            <div class="adresse">
-                <h3>Åbningstider</h3>
-                <p>
-                    Mandag - fredag: 11.00-22.00
-                    <br>
-                    Lørdag: 12.00-23.00
-                    <br>
-                    Søndag: Lukket
-                </p>
-            </div>
-        </footer>
-
-        <script src="bistrobabushka.js"></script>
+    <template>
+        <article id="ret">
+            <img src="" alt="">
+            <h2 class="navn"></h2>
+            <p class="kort"></p>
+            <p class="pris"></p>
+        </article>
+    </template>
 
 
 
 
+    <footer id="kontakt">
+        <div class="adresse">
+            <h3>Kontakt</h3>
+            <p>
+                Toftvej 60
+                <br>
+                1207 København K
+                <br>
+                Tlf: +45 12 34 56 78
+            </p>
+        </div>
+
+        <div class="adresse">
+            <h3>Åbningstider</h3>
+            <p>
+                Mandag - fredag: 11.00-22.00
+                <br>
+                Lørdag: 12.00-23.00
+                <br>
+                Søndag: Lukket
+            </p>
+        </div>
+    </footer>
+
+    <script src="bistrobabushka.js"></script>
 
 
 
 
-</body></html>
+
+
+
+
+</body>
+
+</html>
